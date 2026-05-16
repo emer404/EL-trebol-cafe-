@@ -189,35 +189,54 @@
     <!-- Contacto Section -->
     <section class="section contact-section" id="contacto">
       <div class="container">
-        <div class="contact-header">
-          <h2>Hablemos</h2>
-          <div class="divider"></div>
-          <p>¿Tienes alguna duda, quieres hacer una reserva especial o cotizar nuestros espacios de coworking? Escríbenos y te responderemos a la brevedad.</p>
-        </div>
-        
-        <div class="contact-form-wrapper reveal-up">
-          <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Gracias por tu mensaje! Te contactaremos pronto.');">
-            <div class="form-group">
-              <input type="text" placeholder=" " required id="name">
-              <label for="name">Nombre completo</label>
+        <div class="contact-layout">
+          <div class="contact-info reveal-up">
+            <div class="contact-header">
+              <h2>Hablemos</h2>
+              <div class="divider"></div>
+              <p>¿Tienes alguna duda, quieres hacer una reserva especial o cotizar nuestros espacios de coworking? Escríbenos y te responderemos a la brevedad.</p>
             </div>
-            <div class="form-group">
-              <input type="email" placeholder=" " required id="email">
-              <label for="email">Correo electrónico</label>
+
+            <div class="contact-collage" aria-label="Momentos en Trébol Café">
+              <figure class="contact-collage-item collage-main" tabindex="0">
+                <img src="img/espacios.jpeg" alt="Zona de coworking en Trébol Café">
+                <figcaption>Coworking tranquilo</figcaption>
+              </figure>
+              <figure class="contact-collage-item collage-top" tabindex="0">
+                <img src="img/bebida3.jpeg" alt="Latte servido en Trébol Café">
+                <figcaption>Café al momento</figcaption>
+              </figure>
+              <figure class="contact-collage-item collage-bottom" tabindex="0">
+                <img src="img/espacios2.jpeg" alt="Ambiente interior de Trébol Café">
+                <figcaption>Espacios para reunirte</figcaption>
+              </figure>
             </div>
-            <div class="form-group">
-              <input type="text" placeholder=" " required id="subject">
-              <label for="subject">Asunto</label>
-            </div>
-            <div class="form-group">
-              <textarea placeholder=" " required id="message" rows="4"></textarea>
-              <label for="message">Mensaje</label>
-            </div>
-            <button type="submit" class="btn btn-primary submit-btn">
-              <span class="btn-text">Enviar Mensaje</span>
-              <div class="btn-bg-hover"></div>
-            </button>
-          </form>
+          </div>
+
+          <div class="contact-form-wrapper reveal-up">
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Gracias por tu mensaje! Te contactaremos pronto.');">
+              <div class="form-group">
+                <input type="text" placeholder=" " required id="name">
+                <label for="name">Nombre completo</label>
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder=" " required id="email">
+                <label for="email">Correo electrónico</label>
+              </div>
+              <div class="form-group">
+                <input type="text" placeholder=" " required id="subject">
+                <label for="subject">Asunto</label>
+              </div>
+              <div class="form-group">
+                <textarea placeholder=" " required id="message" rows="4"></textarea>
+                <label for="message">Mensaje</label>
+              </div>
+              <button type="submit" class="btn btn-primary submit-btn">
+                <span class="btn-text">Enviar Mensaje</span>
+                <div class="btn-bg-hover"></div>
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </section>

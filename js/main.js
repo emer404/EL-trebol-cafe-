@@ -1,4 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Mobile menu
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  function closeMobileMenu() {
+    menuToggle.classList.remove('is-open');
+    nav.classList.remove('is-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Abrir menú');
+  }
+
+  menuToggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('is-open');
+    menuToggle.classList.toggle('is-open', isOpen);
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+  });
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+
   // Intersection Observer for scroll animations
   const observerOptions = {
     threshold: 0.1,
@@ -110,6 +133,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && modal.classList.contains('is-open')) {
       closeCardModal();
+    }
+
+    if (event.key === 'Escape' && nav.classList.contains('is-open')) {
+      closeMobileMenu();
     }
   });
 });

@@ -74,6 +74,7 @@ h1, h2, h3, .brand-text {
 }
 
 .logo-circle {
+  flex: 0 0 auto;
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
@@ -87,6 +88,9 @@ h1, h2, h3, .brand-text {
   font-family: var(--font-sans);
   background-image: url("../img/logo.jpg");
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .brand-text {

@@ -44,30 +44,52 @@
       <div class="hero-container">
         <div class="hero-content">
           <img src="img/logo.jpg" alt="logo" class="hero-logo fade-in-up">
-          <h1 class="hero-title">
-            <span class="title-welcome fade-in-left">Bienvenido a</span>
-            <span class="title-brand fade-in-left">Trébol Café</span>
-          </h1>
-          <div class="divider grow-left"></div>
-          <p class="hero-desc fade-in-up">Café de origen, preparado con pasión y servido con<br>calidez en un ambiente diseñado para inspirarte.</p>
+          <div class="hero-title-group">
+            <span class="title-welcome fade-in-left">BIENVENIDO A</span>
+            <h1 class="hero-title fade-in-left">
+              <span class="title-brand">Trébol Café</span>
+            </h1>
+            <div class="divider-with-icon fade-in-up">
+              <div class="line"></div>
+              <svg class="clover-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C10.5 2 9.5 3 9.5 4.5C9.5 6 10.5 7 12 8C13.5 7 14.5 6 14.5 4.5C14.5 3 13.5 2 12 2ZM22 12C22 10.5 21 9.5 19.5 9.5C18 9.5 17 10.5 16 12C17 13.5 18 14.5 19.5 14.5C21 14.5 22 13.5 22 12ZM12 22C13.5 22 14.5 21 14.5 19.5C14.5 18 13.5 17 12 16C10.5 17 9.5 18 9.5 19.5C9.5 21 10.5 22 12 22ZM2 12C2 13.5 3 14.5 4.5 14.5C6 14.5 7 13.5 8 12C7 10.5 6 9.5 4.5 9.5C3 9.5 2 10.5 2 12Z"/>
+              </svg>
+              <div class="line"></div>
+            </div>
+          </div>
+          <p class="hero-desc fade-in-up">Café de origen, preparado con pasión<br>y servido con calidez en un ambiente<br>diseñado para inspirarte.</p>
           
           <div class="hero-actions fade-in-up-delayed">
             <a href="#catalogo" class="btn btn-primary">
+              <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" x2="6" y1="2" y2="4"/><line x1="10" x2="10" y1="2" y2="4"/><line x1="14" x2="14" y1="2" y2="4"/></svg>
               <span class="btn-text">Ver Catálogo</span>
               <div class="btn-bg-hover"></div>
             </a>
             <a href="#coworking" class="btn btn-outline">
+              <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
               <span>Coworking</span>
             </a>
           </div>
 
-          <div class="coffee-beans">
-            <!-- 5 beans animated via CSS -->
-            <div class="bean b1"></div>
-            <div class="bean b2"></div>
-            <div class="bean b3"></div>
-            <div class="bean b4"></div>
-            <div class="bean b5"></div>
+          <div class="hero-features fade-in-up-delayed">
+             <div class="feature-item">
+                <div class="feature-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 20.729C5 20.354 2 17 2 12c0-5 3.5-9 8.5-9 5 0 8.5 4 8.5 9 0 5.4-3.5 8.7-9 8.729z"/><path d="M7 11.5c2 1.5 5 1.5 7-.5"/></svg>
+                </div>
+                <p>Café de<br>Origen</p>
+             </div>
+             <div class="feature-item">
+                <div class="feature-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+                </div>
+                <p>Ingredientes<br>Naturales</p>
+             </div>
+             <div class="feature-item">
+                <div class="feature-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/></svg>
+                </div>
+                <p>Ambiente<br>Acogedor</p>
+             </div>
           </div>
         </div>
 
@@ -83,6 +105,23 @@
                <img src="img/bebida3.jpeg" alt="Latte Art" onerror="this.src='https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=500&auto=format'">
              </div>
              <div class="glass-accent"></div>
+          </div>
+          
+          <div class="mobile-gallery-grid">
+             <div class="mobile-gallery-item">
+               <img src="img/bebida1.jpeg" alt="Momentos que inspiran">
+               <div class="gallery-badge">
+                 <span>Momentos que<br>inspiran</span>
+                 <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+               </div>
+             </div>
+             <div class="mobile-gallery-item">
+               <img src="img/espacios.jpeg" alt="Sabores que conectan">
+               <div class="gallery-badge">
+                 <span>Sabores que<br>conectan</span>
+                 <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+               </div>
+             </div>
           </div>
         </div>
       </div>
@@ -103,9 +142,13 @@
     <!-- Catálogo Section -->
     <section class="section catalog-section" id="catalogo">
       <div class="container">
-        <div class="section-header reveal-up">
-          <h2>Nuestro Catálogo</h2>
-          <div class="divider"></div>
+        <div class="section-header catalog-header reveal-up">
+          <span class="subtitle">NUESTRO CATÁLOGO</span>
+          <div class="divider-with-icon">
+            <div class="line"></div>
+          </div>
+          <h2>Descubre nuestra selección</h2>
+          <p>Bebidas, alimentos y experiencias pensadas para ti.</p>
         </div>
 
         <div class="filters reveal-up">
@@ -211,31 +254,6 @@
                 <figcaption>Espacios para reunirte</figcaption>
               </figure>
             </div>
-          </div>
-
-          <div class="contact-form-wrapper reveal-up">
-            <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Gracias por tu mensaje! Te contactaremos pronto.');">
-              <div class="form-group">
-                <input type="text" placeholder=" " required id="name">
-                <label for="name">Nombre completo</label>
-              </div>
-              <div class="form-group">
-                <input type="email" placeholder=" " required id="email">
-                <label for="email">Correo electrónico</label>
-              </div>
-              <div class="form-group">
-                <input type="text" placeholder=" " required id="subject">
-                <label for="subject">Asunto</label>
-              </div>
-              <div class="form-group">
-                <textarea placeholder=" " required id="message" rows="4"></textarea>
-                <label for="message">Mensaje</label>
-              </div>
-              <button type="submit" class="btn btn-primary submit-btn">
-                <span class="btn-text">Enviar Mensaje</span>
-                <div class="btn-bg-hover"></div>
-              </button>
-            </form>
           </div>
         </div>
       </div>

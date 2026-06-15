@@ -1,8 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile menu
+  const header = document.querySelector('.header');
   const menuToggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.nav');
   const navLinks = document.querySelectorAll('.nav-link');
+
+  // Header scroll state
+  function updateHeader() {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  function updateActiveNav() {
+    const scrollPos = window.scrollY + 120;
+    let current = '';
+    sections.forEach(section => {
+      if (scrollPos >= section.offsetTop) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      link.classList.toggle('active', href === `#${current}`);
+    });
+  }
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+  updateActiveNav();
 
   function closeMobileMenu() {
     menuToggle.classList.remove('is-open');

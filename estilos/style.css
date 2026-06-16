@@ -802,7 +802,6 @@ h1, h2, h3, .brand-text {
 
 .catalog-section {
   position: relative;
-  overflow: hidden;
   color: var(--text-light);
   background:
     linear-gradient(180deg, rgba(10, 10, 10, 0.88) 0%, rgba(17, 14, 12, 0.9) 52%, rgba(10, 10, 10, 0.94) 100%),
@@ -862,6 +861,9 @@ h1, h2, h3, .brand-text {
   gap: 1rem;
   margin-bottom: 3rem;
   flex-wrap: wrap;
+  overflow: visible;
+  position: relative;
+  z-index: 10;
 }
 
 .filter-btn {
@@ -892,11 +894,154 @@ h1, h2, h3, .brand-text {
   box-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
 }
 
+/* Dropdown Styles */
+.filter-dropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 2000;
+  overflow: visible;
+}
+
+.dropdown-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-right: 1rem;
+  position: relative;
+  z-index: 2001;
+}
+
+.dropdown-arrow {
+  transition: transform 0.3s ease;
+}
+
+.dropdown-btn.dropdown-active .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  min-width: 140px;
+  background: rgba(18, 16, 14, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.25s ease;
+  z-index: 2002;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.dropdown-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(200, 168, 130, 0.15);
+  color: var(--text-light);
+}
+
 /* Catalog Grid */
 .catalog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+}
+
+/* Catalog Wrapper & Pagination */
+.catalog-wrapper {
+  position: relative;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.pagination-controls.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pagination-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-sans);
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background: rgba(201, 168, 76, 0.12);
+  border-color: var(--border-accent);
+  color: var(--primary-light);
+  transform: scale(1.05);
+}
+
+.pagination-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.pagination-btn:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  min-width: 3rem;
+  justify-content: center;
+}
+
+.pagination-current {
+  color: var(--primary-light);
+}
+
+.pagination-sep {
+  color: var(--text-subtle);
 }
 
 /* Mobile Catalog Improvements */
@@ -904,6 +1049,11 @@ h1, h2, h3, .brand-text {
   .catalog-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+  
+  .pagination-controls {
+    margin-top: 1.5rem;
+    gap: 1rem;
   }
   
   .card-img-wrapper {
@@ -1011,15 +1161,14 @@ h1, h2, h3, .brand-text {
 
 .card-body {
   position: absolute;
-  bottom: 1rem;
-  left: 50%;
+  bottom: 14rem;
+  left: 104%;
   transform: translateX(-50%);
   width: 90%;
-  background: rgba(18, 16, 14, 0.92);
-  backdrop-filter: blur(12px);
+  background: rgba(18, 16, 14, 0.60);
   -webkit-backdrop-filter: blur(12px);
   border-radius: var(--radius-md);
-  padding: 1rem 1.1rem;
+  padding: 0.5rem;
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -2697,32 +2846,6 @@ body.modal-open {
   color: var(--primary);
 }
 
-.hero-features {
-  display: flex;
-  justify-content: flex-start;
-  gap: 2.5rem;
-  margin-top: 2.5rem;
-  width: 100%;
-}
-
-.feature-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0.75rem;
-}
-
-.feature-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  border: 1px solid rgba(212, 175, 55, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary);
-}
 
 .feature-item p {
   font-size: 0.85rem;

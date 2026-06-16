@@ -76,38 +76,20 @@
             </a>
           </div>
 
-          <div class="hero-features fade-in-up-delayed">
-             <div class="feature-item">
-                <div class="feature-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 20.729C5 20.354 2 17 2 12c0-5 3.5-9 8.5-9 5 0 8.5 4 8.5 9 0 5.4-3.5 8.7-9 8.729z"/><path d="M7 11.5c2 1.5 5 1.5 7-.5"/></svg>
-                </div>
-                <p>Café de<br>Origen</p>
-             </div>
-             <div class="feature-item">
-                <div class="feature-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
-                </div>
-                <p>Ingredientes<br>Naturales</p>
-             </div>
-             <div class="feature-item">
-                <div class="feature-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/></svg>
-                </div>
-                <p>Ambiente<br>Acogedor</p>
-             </div>
-          </div>
+          
+            
         </div>
 
         <div class="hero-gallery fade-in-right">
           <div class="gallery-composition">
              <div class="comp-img comp-img-1">
-               <img src="img/bebida1.jpeg" alt="Café de Origen" onerror="this.src='https://images.unsplash.com/photo-1511920170033-f8396924c348?w=500&auto=format'">
+               <img src="img/fondo2.jpeg" alt="Café de Origen" onerror="this.src='https://images.unsplash.com/photo-1511920170033-f8396924c348?w=500&auto=format'">
              </div>
              <div class="comp-img comp-img-2">
-               <img src="img/espacios.jpeg" alt="Coworking Space" onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&auto=format'">
+               <img src="img/fondo.jpeg" alt="Coworking Space" onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&auto=format'">
              </div>
              <div class="comp-img comp-img-3">
-               <img src="img/bebida3.jpeg" alt="Latte Art" onerror="this.src='https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=500&auto=format'">
+               <img src="img/fondo1.jpeg" alt="Latte Art" onerror="this.src='https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=500&auto=format'">
              </div>
              <div class="glass-accent"></div>
           </div>
@@ -218,77 +200,128 @@
 
         <div class="filters reveal-up">
           <button class="filter-btn active" data-filter="todos">Todos</button>
-          <button class="filter-btn" data-filter="bebidas">Bebidas</button>
+          <div class="filter-dropdown">
+            <button class="filter-btn dropdown-btn" data-filter="bebidas">
+              Bebidas
+              <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="dropdown-menu">
+              <button class="dropdown-item" data-subfilter="calientes">Calientes</button>
+              <button class="dropdown-item" data-subfilter="frias">Frías</button>
+            </div>
+          </div>
           <button class="filter-btn" data-filter="espacios">Coworking</button>
         </div>
 
-        <div class="catalog-grid reveal-up">
-          <!-- Bebidas -->
-          <article class="card category-item" data-cat="bebidas">
-            <div class="card-img-wrapper">
-               <img src="img/bebida1.jpeg" alt="Espresso Tradicional" onerror="this.src='https://images.unsplash.com/photo-1511920170033-f8396924c348?w=500&auto=format'">
-               <div class="card-overlay"></div>
-            </div>
-            <div class="card-body">
-              <span class="card-tag">Bebida</span>
-              <h3>Espresso Tradicional</h3>
-              <p>Concentrado intenso de origen colombiano.</p>
-              <span class="price">$3.500</span>
-            </div>
-          </article>
-          
-          <article class="card category-item" data-cat="bebidas">
-            <div class="card-img-wrapper">
-               <img src="img/bedida2.jpeg" alt="Capuchino" onerror="this.src='https://images.unsplash.com/photo-1534040385115-33dcb3acba5b?w=500&auto=format'">
-               <div class="card-overlay"></div>
-            </div>
-            <div class="card-body">
-              <span class="card-tag">Bebida</span>
-              <h3>Capuchino Cremoso</h3>
-              <p>Espresso con leche vaporizada y espuma sedosa.</p>
-              <span class="price">$5.000</span>
-            </div>
-          </article>
-          
-          <article class="card category-item" data-cat="bebidas">
-            <div class="card-img-wrapper">
-               <img src="img/bebida3.jpeg" alt="Latte" onerror="this.src='https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=500&auto=format'">
-               <div class="card-overlay"></div>
-            </div>
-            <div class="card-body">
-              <span class="card-tag">Bebida</span>
-              <h3>Latte Vainilla</h3>
-              <p>Suave espresso con leche y un toque de vainilla.</p>
-              <span class="price">$5.500</span>
-            </div>
-          </article>
-          
-          <article class="card category-item" data-cat="bebidas">
-            <div class="card-img-wrapper">
-               <img src="img/bebida4.jpeg" alt="Americano" onerror="this.src='https://images.unsplash.com/photo-1551030173-122aabc4489c?w=500&auto=format'">
-               <div class="card-overlay"></div>
-            </div>
-            <div class="card-body">
-              <span class="card-tag">Bebida</span>
-              <h3>Café Americano</h3>
-              <p>Espresso suavizado con agua caliente, perfecto para empezar el día.</p>
-              <span class="price">$4.000</span>
-            </div>
-          </article>
+        <div class="catalog-wrapper reveal-up">
+          <div class="catalog-grid">
+            <!-- Bebidas -->
+            <article class="card category-item" data-cat="bebidas" data-subcat="frias">
+              <div class="card-img-wrapper">
+                 <img src="img/1.jpeg" alt="Espresso Tradicional" onerror="this.src='https://images.unsplash.com/photo-1511920170033-f8396924c348?w=500&auto=format'">
+                 <div class="card-overlay"></div>
+              </div>
+              <div class="card-body">
+                <span class="card-tag">Frias</span>
+                <h3>Margarita del Bosque</h3>
+                <p>Concentrado intenso de origen colombiano.</p>
+                <span class="price">$25.000</span>
+              </div>
+            </article>
+            
+            <article class="card category-item" data-cat="bebidas" data-subcat="frias">
+              <div class="card-img-wrapper">
+                 <img src="img/2.jpg" alt="Capuchino" onerror="this.src='https://images.unsplash.com/photo-1534040385115-33dcb3acba5b?w=500&auto=format'">
+                 <div class="card-overlay"></div>
+              </div>
+              <div class="card-body">
+                <span class="card-tag">Frias</span>
+                <h3>Cerveza Michelada</h3>
+                <p>.</p>
+                <span class="price">$5.000</span>
+              </div>
+            </article>
+            
+            <article class="card category-item" data-cat="bebidas" data-subcat="calientes">
+              <div class="card-img-wrapper">
+                 <img src="img/3.jpg" alt="Latte" onerror="this.src='https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=500&auto=format'">
+                 <div class="card-overlay"></div>
+              </div>
+              <div class="card-body">
+                <span class="card-tag">Calientes</span>
+                <h3>Capuchino</h3>
+                <p>...</p>
+                <span class="price">$8.000</span>
+              </div>
+            </article>
+            
+            <article class="card category-item" data-cat="bebidas" data-subcat="calientes">
+              <div class="card-img-wrapper">
+                 <img src="img/4.jpg" alt="Americano" onerror="this.src='https://images.unsplash.com/photo-1551030173-122aabc4489c?w=500&auto=format'">
+                 <div class="card-overlay"></div>
+              </div>
+              <div class="card-body">
+                <span class="card-tag">Calientes</span>
+                <h3>Café Americano</h3>
+                <p>Espresso suavizado con agua caliente, perfecto para empezar el día.</p>
+                <span class="price">$4.000</span>
+              </div>
+            </article>
 
-          <!-- Espacios -->
-          <article class="card category-item" data-cat="espacios" id="coworking">
-            <div class="card-img-wrapper">
-               <img src="img/espacios.jpeg" alt="Puesto Individual" onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&auto=format'">
-               <div class="card-overlay"></div>
-            </div>
-            <div class="card-body">
-              <span class="card-tag">Coworking</span>
-              <h3>Puesto Individual</h3>
-              <p>Escritorio privado con conexión de alta velocidad y café ilimitado.</p>
-              <span class="price">$12.000 / hora</span>
-            </div>
-          </article>
+            <article class="card category-item" data-cat="bebidas" data-subcat="frias">
+              <div class="card-img-wrapper">
+                 <img src="img/5.jpg" alt="Americano" onerror="this.src='https://images.unsplash.com/photo-1551030173-122aabc4489c?w=500&auto=format'">
+                 <div class="card-overlay"></div>
+              </div>
+              <div class="card-body">
+                <span class="card-tag">Frias</span>
+                <h3>Bebida de la casa</h3>
+                <p>Uchuva, Cedrón, Cilantro y espresso doble.</p>
+                <span class="price">$13.000</span>
+              </div>
+            </article>
+
+            <article class="card category-item" data-cat="bebidas" data-subcat="frias">
+              <div class="card-img-wrapper">
+                 <img src="img/6.jpg" alt="Americano" onerror="this.src='https://images.unsplash.com/photo-1551030173-122aabc4489c?w=500&auto=format'">
+                 <div class="card-overlay"></div>
+              </div>
+              <div class="card-body">
+                <span class="card-tag">Frias</span>
+                <h3>Nevado de café...</h3>
+                <p>Nevado de café, Oreo o Arequipe</p>
+                <span class="price">$14.000</span>
+              </div>
+            </article>
+
+            <!-- Espacios -->
+            <article class="card category-item" data-cat="espacios" id="coworking">
+              <div class="card-img-wrapper">
+                 <img src="img/5.jpg" alt="Puesto Individual" onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&auto=format'">
+                 <div class="card-overlay"></div>
+              </div>
+              <div class="card-body">
+                <span class="card-tag">Bebida</span>
+                <h3>Bebida de la casa</h3>
+                <p>Uchuva, Cedrón, Cilantro y espresso doble.</p>
+                <span class="price">$13.000</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="pagination-controls">
+            <button class="pagination-btn pagination-prev" aria-label="Página anterior">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+            </button>
+            <span class="pagination-info">
+              <span class="pagination-current">1</span>
+              <span class="pagination-sep">/</span>
+              <span class="pagination-total">1</span>
+            </span>
+            <button class="pagination-btn pagination-next" aria-label="Página siguiente">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>

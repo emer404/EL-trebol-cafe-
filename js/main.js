@@ -68,11 +68,74 @@ document.addEventListener('DOMContentLoaded', () => {
   // Filter functionality
   const filterBtns = document.querySelectorAll('.filter-btn');
   const items = document.querySelectorAll('.category-item');
+  const dropdownBtn = document.querySelector('.dropdown-btn');
+  const dropdownMenu = document.querySelector('.dropdown-menu');
+  const dropdownItems = document.querySelectorAll('.dropdown-item');
+
+  // Dropdown toggle
+  if (dropdownBtn && dropdownMenu) {
+    dropdownBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdownMenu.classList.toggle('open');
+      dropdownBtn.classList.toggle('dropdown-active');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', () => {
+      dropdownMenu.classList.remove('open');
+      dropdownBtn.classList.remove('dropdown-active');
+    });
+
+    // Prevent dropdown from closing when clicking inside
+    dropdownMenu.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  }
+
+  // Dropdown item filtering
+  dropdownItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const subfilter = item.getAttribute('data-subfilter');
+      
+      // Remove active class from all main filter buttons
+      filterBtns.forEach(b => b.classList.remove('active'));
+      // Add active class to bebidas button
+      dropdownBtn.classList.add('active');
+      
+      // Close dropdown
+      dropdownMenu.classList.remove('open');
+      dropdownBtn.classList.remove('dropdown-active');
+      
+      items.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'scale(0.9)';
+        
+        setTimeout(() => {
+          const cat = card.getAttribute('data-cat');
+          const subcat = card.getAttribute('data-subcat');
+          
+          if (cat === 'bebidas' && subcat === subfilter) {
+            card.style.display = 'block';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'scale(1)';
+            }, 50);
+          } else {
+            card.style.display = 'none';
+          }
+        }, 300);
+      });
+    });
+  });
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
+      // Skip dropdown button
+      if (btn.classList.contains('dropdown-btn')) return;
+      
       // Remove active class from all buttons
       filterBtns.forEach(b => b.classList.remove('active'));
+      dropdownBtn.classList.remove('active');
       // Add active class to clicked button
       btn.classList.add('active');
       
@@ -84,18 +147,112 @@ document.addEventListener('DOMContentLoaded', () => {
         item.style.transform = 'scale(0.9)';
         
         setTimeout(() => {
-          if (filterValue === 'todos' || item.getAttribute('data-cat') === filterValue) {
+          if (filterValue === 'todos') {
+            // En 'Todos' mostrar solo bebidas, ocultar coworking
+            if (item.getAttribute('data-cat') !== 'espacios') {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          } else if (item.getAttribute('data-cat') === filterValue) {
             item.style.display = 'block';
-            setTimeout(() => {
-              item.style.opacity = '1';
-              item.style.transform = 'scale(1)';
-            }, 50);
           } else {
             item.style.display = 'none';
           }
+          
+          setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'scale(1)';
+          }, 50);
         }, 300);
       });
     });
+  });
+
+  // Ocultar card de coworking al cargar (solo se muestra con filtro Coworking)
+  items.forEach(item => {
+    if (item.getAttribute('data-cat') === 'espacios') {
+      item.style.display = 'none';
+    }
+  });
+
+  // ---- Pagination ----
+  const ITEMS_PER_PAGE = 6;
+  let currentPage = 1;
+  const paginationPrev = document.querySelector('.pagination-prev');
+  const paginationNext = document.querySelector('.pagination-next');
+  const paginationCurrent = document.querySelector('.pagination-current');
+  const paginationTotal = document.querySelector('.pagination-total');
+  const paginationControls = document.querySelector('.pagination-controls');
+
+  function getVisibleItems() {
+    return Array.from(items).filter(item => item.style.display !== 'none');
+  }
+
+  function updatePagination() {
+    const visibleItems = getVisibleItems();
+    const totalPages = Math.max(1, Math.ceil(visibleItems.length / ITEMS_PER_PAGE));
+    
+    // Reset page if current exceeds total
+    if (currentPage > totalPages) currentPage = totalPages;
+    
+    paginationCurrent.textContent = currentPage;
+    paginationTotal.textContent = totalPages;
+    
+    // Enable/disable buttons
+    paginationPrev.disabled = currentPage <= 1;
+    paginationNext.disabled = currentPage >= totalPages;
+    
+    // Show items for current page
+    visibleItems.forEach((item, index) => {
+      const shouldShow = Math.floor(index / ITEMS_PER_PAGE) + 1 === currentPage;
+      if (shouldShow) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  if (paginationPrev) {
+    paginationPrev.addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage--;
+        updatePagination();
+      }
+    });
+  }
+
+  if (paginationNext) {
+    paginationNext.addEventListener('click', () => {
+      const visibleItems = getVisibleItems();
+      const totalPages = Math.max(1, Math.ceil(visibleItems.length / ITEMS_PER_PAGE));
+      if (currentPage < totalPages) {
+        currentPage++;
+        updatePagination();
+      }
+    });
+  }
+
+  // Initialize pagination
+  updatePagination();
+
+  // Update pagination when filters change (after animation completes)
+  function applyPaginationAfterFilter() {
+    setTimeout(() => {
+      currentPage = 1;
+      updatePagination();
+    }, 400);
+  }
+  
+  // Hook into all filter buttons (including dropdown)
+  filterBtns.forEach(btn => {
+    if (!btn.classList.contains('dropdown-btn')) {
+      btn.addEventListener('click', applyPaginationAfterFilter);
+    }
+  });
+  dropdownItems.forEach(item => {
+    item.addEventListener('click', applyPaginationAfterFilter);
   });
 
   // Expanded card detail

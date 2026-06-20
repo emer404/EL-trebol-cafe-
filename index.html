@@ -32,7 +32,7 @@
         <a href="#catalogo" class="nav-link">Catálogo</a>
         <a href="#coworking" class="nav-link">Coworking</a>
         <a href="#contacto" class="nav-link">Contacto</a>
-        <a href="#contacto" class="nav-cta">Reservar</a>
+        <a href="#catalogo" class="nav-cta">Reservar</a>
       </nav>
     </div>
   </header>
@@ -210,6 +210,17 @@
               <button class="dropdown-item" data-subfilter="frias">Frías</button>
             </div>
           </div>
+          <div class="filter-dropdown">
+            <button class="filter-btn dropdown-btn" data-filter="comidas">
+              Comidas
+              <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="dropdown-menu">
+              <button class="dropdown-item" data-subfilter="tortas">Tortas</button>
+              <button class="dropdown-item" data-subfilter="desayunos">Desayunos</button>
+              <button class="dropdown-item" data-subfilter="postres">Postres</button>
+            </div>
+          </div>
           <button class="filter-btn" data-filter="espacios">Coworking</button>
         </div>
 
@@ -242,7 +253,7 @@
               </div>
             </article>
             
-            <article class="card category-item" data-cat="bebidas" data-subcat="calientes">
+            <article class="card category-item" data-cat="bebidas" data-subcat="calientes" data-gallery="img/3.jpg,img/3.1.jpg">
               <div class="card-img-wrapper">
                  <img src="img/3.jpg" alt="Latte" onerror="this.src='https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=500&auto=format'">
                  <div class="card-overlay"></div>
@@ -291,6 +302,85 @@
                 <h3>Nevado de café...</h3>
                 <p>Nevado de café, Oreo o Arequipe</p>
                 <span class="price">$14.000</span>
+              </div>
+            </article>
+
+            <article class="card category-item" data-cat="bebidas" data-subcat="frias" data-gallery="img/frias1.png,img/frias1.1.png">
+              <div class="card-img-wrapper">
+                 <img src="img/frias1.png" alt="Americano" onerror="this.src='https://images.unsplash.com/photo-1551030173-122aabc4489c?w=500&auto=format'">
+                 <div class="card-overlay"></div>
+              </div>
+              <div class="card-body">
+                <span class="card-tag">Frias</span>
+                <h3>Sol de café</h3>
+                <p>Jugo de naranja, espresso doble y miel</p>
+                <span class="price">$14.000</span>
+              </div>
+            </article>
+
+            <article class="card category-item" data-cat="bebidas" data-subcat="frias">
+              <div class="card-img-wrapper">
+                 <img src="img/fria2.png" alt="Americano" onerror="this.src='https://images.unsplash.com/photo-1551030173-122aabc4489c?w=500&auto=format'">
+                 <div class="card-overlay"></div>
+              </div>
+              <div class="card-body">
+                <span class="card-tag">Frias</span>
+                <h3>Café irlandés</h3>
+                <p>Irish coffee</p>
+                <span class="price">$25.000</span>
+              </div>
+            </article>
+
+            <!-- Comidas -->
+            <article class="card category-item" data-cat="comidas" data-subcat="tortas" data-gallery="img/torta1.jpg,img/torta1.2.jpg">
+              <div class="card-img-wrapper">
+                 <img src="img/torta1.jpg" alt="Torta artesanal" onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&auto=format'">
+                 <div class="card-overlay"></div>
+              </div>
+              <div class="card-body">
+                <span class="card-tag">Tortas</span>
+                <h3>Torta de zanahoria...</h3>
+                <p>Torta de zanahoria con naranja.</p>
+                <span class="price">$12.000</span>
+              </div>
+            </article>
+
+            <article class="card category-item" data-cat="comidas" data-subcat="tortas" data-gallery="img/torta2.2.png,img/torta2.3.jpg,img/torta2.4.png">
+              <div class="card-img-wrapper">
+                 <img src="img/torta2.2.png" alt="Torta de chocolate" onerror="this.src='https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=500&auto=format'">
+                 <div class="card-overlay"></div>
+              </div>
+              <div class="card-body">
+                <span class="card-tag">Tortas</span>
+                <h3>Torta vasca</h3>
+                <p>ideal para acompañar con café caliente.</p>
+                <span class="price">$12.000</span>
+              </div>
+            </article>
+
+            <article class="card category-item" data-cat="comidas" data-subcat="desayunos" data-gallery="img/desayuno1.jpg,img/desayuno1.1.jpg">
+              <div class="card-img-wrapper">
+                 <img src="img/desayuno1.jpg" alt="Desayuno especial" onerror="this.src='https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=500&auto=format'">
+                 <div class="card-overlay"></div>
+              </div>
+              <div class="card-body">
+                <span class="card-tag">Desayunos</span>
+                <h3>Desayuno Trébol</h3>
+                <p>Arepa de queso, huevos al gusto (con cebolla y tomate, revueltos, fritos o cocidos). Fruta de temporada, pan local, incluye chocolate o café</p>
+                <span class="price">$16.000</span>
+              </div>
+            </article>
+
+            <article class="card category-item" data-cat="comidas" data-subcat="postres">
+              <div class="card-img-wrapper">
+                 <img src="img/postre1.jpg" alt="Postre artesanal" onerror="this.src='https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500&auto=format'">
+                 <div class="card-overlay"></div>
+              </div>
+              <div class="card-body">
+                <span class="card-tag">Postres</span>
+                <h3>Postre frutos rojos</h3>
+                <p>Postre cuchareable de frutos rojos (Arándanos, queso crema, galleta)</p>
+                <span class="price">$12.000</span>
               </div>
             </article>
 
@@ -470,6 +560,12 @@
       <button class="card-modal-close" type="button" aria-label="Cerrar detalle" data-close-modal>×</button>
       <div class="card-modal-img">
         <img src="" alt="" id="modalImage">
+        <button class="card-modal-arrow card-modal-prev" type="button" aria-label="Ver foto anterior">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="card-modal-arrow card-modal-next" type="button" aria-label="Ver siguiente foto">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
       </div>
       <div class="card-modal-body">
         <span class="card-modal-label" id="modalCategory"></span>
@@ -480,7 +576,7 @@
         </div>
         <div class="card-modal-footer">
           <span class="price" id="modalPrice"></span>
-          <a href="#contacto" class="btn btn-primary" data-close-modal>
+          <a href="https://wa.me/573213298852" class="btn btn-primary" id="modalReserveLink" target="_blank" rel="noopener noreferrer">
             <span class="btn-text">Reservar</span>
             <div class="btn-bg-hover"></div>
           </a>

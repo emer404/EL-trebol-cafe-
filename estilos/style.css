@@ -1288,6 +1288,7 @@ h1, h2, h3, .brand-text {
 }
 
 .card-modal-img {
+  position: relative;
   min-height: 480px;
   background: rgba(255, 255, 255, 0.04);
 }
@@ -1297,6 +1298,44 @@ h1, h2, h3, .brand-text {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.card-modal-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  background: rgba(17, 14, 12, 0.72);
+  color: var(--text-light);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.card-modal.has-gallery .card-modal-arrow {
+  display: flex;
+}
+
+.card-modal-prev {
+  left: 1rem;
+}
+
+.card-modal-next {
+  right: 1rem;
+}
+
+.card-modal-arrow:hover,
+.card-modal-arrow:focus-visible {
+  background: var(--primary);
+  color: var(--bg-dark);
+  outline: none;
+  transform: translateY(-50%) scale(1.05);
 }
 
 .card-modal-body {
@@ -2169,11 +2208,11 @@ body.modal-open {
 
   .filters {
     justify-content: flex-start;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 0.45rem;
     padding: 0.35rem;
     margin-bottom: 1.25rem;
-    overflow-x: auto;
+    overflow: visible;
     border: 1px solid rgba(212, 175, 55, 0.15);
     border-radius: 0.9rem;
     background: rgba(255, 255, 255, 0.02);
